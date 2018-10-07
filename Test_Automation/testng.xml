@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Filename: testng.xml
+Note: You have to change the following according to your environment:
+-<class name="com.packageName.MyTestClassName" />
+-->
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="Automation test suite">
+  <test name="mytest">
+	<listeners>
+	<listener class-name="org.uncommons.reportng.HTMLReporter">
+	<listener class-name="org.uncommons.reportng.JUnitXMLReporter">
+	</listener></listener></listeners>
+	    <!-- Add all classes you would like TestNG to run. -->
+	    <classes>
+	      <class name="driverScripts.InitTestNg" />
+	      <methods>
+                <include name="mytest"/>
+            </methods>
+	    </classes>
+	 
+  </test>
+ 
+</suite>
