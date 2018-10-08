@@ -33,13 +33,20 @@ public class ReadExcel {
 	private Object[][] ReadSheetData(String sheetName){
 		try {
 			String Testcases = "/home/sujay/eclipse-workspace/Test_Automation/bin/Data_Files/Testcases.xls";
+			// Creating input stream object
 			FileInputStream fis = new FileInputStream(Testcases);
+			
+			// Creating HSSF object
 			wB = new HSSFWorkbook(fis);
+			
+			// Creating HSSFSheet object
 			HSSFSheet es = wB.getSheet(sheetName);
 			HSSFRow rw = es.createRow(0);
 			
-			
+			// Getting number of rows in the sheet
 			int rows = es.getPhysicalNumberOfRows();
+			
+			// Getting last column in the sheet
 			int column = rw.getLastCellNum();
 			
 			Object [][] excelData = new Object [rows-1][column];
